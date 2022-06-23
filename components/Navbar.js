@@ -1,73 +1,44 @@
-import styled from "styled-components"
-import logo from "../public/logo.png"
+ 
+import logo from "../public/logo_white.png"
 import Image from "next/Image"
 import Link from "next/Link"
+import styles from "../styles/home.module.css"
 
 import NavbarActiveLink from "./NavbarActiveLink"
 
-const Nav = styled.nav`
-    background-color : traansparent;
-    display: flex;
-    justify-content : space-between;
-    align-items : center
-`
-const StyledLinks = styled.ul`
-    display: flex;
-    align-items: center;    
-    list-style-type : none;
-`
+let toggleSwitch = false
+const toggleButtonFunction = () =>{
+    toggleSwitch = !toggleSwitch
+    console.log(toggleSwitch)
+    console.log(styles)
+}
 
-const StyledLink = styled.a`
-    margin-left: 30px;
-    cursor : pointer;
-`
-
-const LinkPill = styled.div`
-    background-color: #DBDBDB;
-    padding: 0px;
-    
-`
 
 
 
 const Navbar = () => {
   return (
     <>
-        <Nav>
-            <div>
-                <Link href ="/">
-                    <a>
-                        <Image 
-                            src = {logo}
-                            alt="Twice Logo"
-                            width={100}
-                            height={100}
-                        />
-                    </a>
-                </Link>
-                
-            </div>
-            <LinkPill>
-                <StyledLinks>
-                    <NavbarActiveLink spacing = {0} href = "/">
-                        Home   
-                    </NavbarActiveLink> 
-                    <NavbarActiveLink spacing= {2} href = "/about">
-                        About
-                    </NavbarActiveLink>
-                    <NavbarActiveLink spacing = {2} href = "/discovery">
-                        Discovery
-                    </NavbarActiveLink>
-                    <NavbarActiveLink spacing = {2} href = "/songs">
-                        Songs
-                    </NavbarActiveLink>
-                    <NavbarActiveLink spacing = {2} href = "/listen">
-                        Listen
-                    </NavbarActiveLink>
-                    
-                </StyledLinks>
-            </LinkPill>
-        </Nav>
+    {/* NAVBAR START */}
+    <nav className={styles.navbar} style = {{alignItems : toggleSwitch ? "center" : "", backgroundColor : toggleSwitch ? "#8399B3" : ""}}>
+        <div className = {styles.logo}>
+            <Image src = {logo} alt = "Twice Logo"/>
+         </div>
+         <a href = "#" className = {styles.toggleButton} onClick = {toggleButtonFunction}>
+            <span className = {styles.bar}></span>
+            <span className = {styles.bar}></span>
+            <span className = {styles.bar}></span>
+         </a>
+         <div className = {styles.navLinks}>
+            <ul>
+                <li><a className = "nav-btn" href = "/">HOME</a></li>
+                <li><a className = "nav-btn" href = "about.html">ABOUT</a></li>
+                <li><a className = "nav-btn" href = "">DISCOVERY</a></li>
+                <li><a className = "nav-btn" href ="">SONGS</a></li>
+                <li><a className = "nav-btn" href = "">LISTEN</a></li>
+            </ul>
+         </div>
+    </nav>
     </>
   )
 }
