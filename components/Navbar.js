@@ -3,6 +3,7 @@ import Image from "next/Image"
 import styled from 'styled-components'
 import NavbarActiveLink from "./NavbarActiveLink"
 import { useState } from "react"
+import Link from "next/link"
 
 import { useRouter } from "next/router"
 
@@ -121,7 +122,10 @@ const Navbar = () => {
     {/* NAVBAR START */}
     <NavBar>
         <LogoBox>
-            <Image style = {{maxWidth : "100%;"}} src = {logo} alt = "Twice Logo"/>
+          <Link href = "/">
+
+           <a><Image style = {{maxWidth : "100%;"}} src = {logo} alt = "Twice Logo"/></a> 
+          </Link>
          </LogoBox>
          <ToggleButton href = "#" onClick = {()=> setHamburger(!hamburger)}> 
             <Bar></Bar>
@@ -133,6 +137,7 @@ const Navbar = () => {
                 <NavLinksLi><NavbarActiveLink href = "/">HOME</NavbarActiveLink></NavLinksLi>
                 <NavLinksLi><NavbarActiveLink href = "/about">ABOUT</NavbarActiveLink></NavLinksLi>
                 <NavLinksLi><NavbarActiveLink href = "/discovery">DISCOVERY</NavbarActiveLink></NavLinksLi>
+                <NavLinksLi><NavbarActiveLink href = "/watch">WATCH</NavbarActiveLink></NavLinksLi>
                 <NavLinksLi><NavbarActiveLink href ="/songs">SONGS</NavbarActiveLink></NavLinksLi>
                 <NavLinksLi><NavbarActiveLink href = "/listen">LISTEN</NavbarActiveLink></NavLinksLi>
             </NavLinksUl>

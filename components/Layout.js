@@ -1,27 +1,20 @@
 import React from 'react'
 import Navbar from './Navbar'
 import styled from 'styled-components'
-import LOGO from '../public/background.webp'
+import { useRouter } from 'next/router'
+
 
 
 const Layout = ({children}) => {
-    
-    const WallpaperBackground = styled.div`
-        background-image : url("../public/formula.png")
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 100vh;
-    `
+  const router = useRouter()
+
+  const isHome = router.pathname === "/"
   return (
 
 
 
     <>
-    <div style = {{
-        backgroundImage : `url(${LOGO})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        height: "100vh"}}> 
+    <div className = {isHome && "home"}> 
          <Navbar/>
         {children}
     </div>
