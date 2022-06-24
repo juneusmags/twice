@@ -6,12 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-.background-image{
-    background-image: url("../public/background.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
+
 
 a {
   color: inherit;

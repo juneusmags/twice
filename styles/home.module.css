@@ -4,6 +4,8 @@
     align-items: center;
     background-color: transparent;
     color: black;
+
+ 
 }
 
 .logo{
@@ -87,10 +89,7 @@
         align-items: flex-start;
     }
 
-    .navbar.active{
-        align-items: center;
-        background-color: #8399B3;
-    }
+    
     .navLinks ul {
         flex-direction: column;
         width: 100%;
@@ -120,9 +119,9 @@
         padding: 0.5rem 1rem;
     }
 
-    .navLinks.active{
+    /* .navLinks.active{
         display: flex
-    }
+    } */
 
     
 }
