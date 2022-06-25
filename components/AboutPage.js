@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import wallpaper from "../public/other.jpg"
+import Card from './Card.js'
 import data from "../data_bio.js"
 
 const AboutPage = () => {
@@ -15,12 +15,9 @@ const AboutPage = () => {
         <section className='about'>
              <AboutSection>
                 {data.map((member)=>{
-                    const [name, image, about, birthday] = member
+                    const {name, image, birthday, about} = member
                     return (
-                        <div>
-                            <Image src = {image} alt = {name}/>
-                            <h3>{name}</h3>
-                        </div>
+                        <Card name = {name} birthday = {birthday} img = {image} bio = {about}/>
                     )
                 })}
            </AboutSection> 
