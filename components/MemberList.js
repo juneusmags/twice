@@ -4,29 +4,23 @@ import styled from 'styled-components'
 
 const MemberList = ({members}) => {
 
-    const Container = styled.div`
+    const ContainerMain = styled.div`
         display: flex;
         justify-content : center;
         align-items: center
-        width : 100%;
-        height: 40%;
-        background : green;
+        width : 100vw;
+        height: 60%;
+        background-color: blue;
         flex-wrap : wrap;
+        z-index : 1;
     `
     
   return (
-    <Container>
-        {members.map((member)=>{
-            return (
-                <div>
-
-                    <Card style = {{backgroundColor: "blue"}} member = {member} key = {member.id}/>
-                </div>
-            )
-        })}
-
+    <ContainerMain>
         
-    </Container>
+        <h1>Hello</h1>
+        
+    </ContainerMain>
   )
 }
 

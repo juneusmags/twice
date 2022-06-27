@@ -1,30 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
-import Card from './Card.js'
-import data from "../data_bio.js"
-import MemberList from './MemberList.js'
-import { useState } from 'react'
+import dynamic from 'next/dynamic.js'
+
+
+
+
+const CoverFlow = dynamic(()=>import("../components/CoverFlowComponent"),{ssr: false})
+
+
 
 const AboutPage = () => {
-    const [members, setMembers] = useState(data)
-
+  
     const AboutSection = styled.div`
         display: flex;
         justify-content: center;
         align-items : center;
-        background-color: rgba(135, 135, 135, 0.7);
-        width : 100%;
-        height: 100vh;
-        color : black;
-        display : flex;
+        background-color : blue;
+        width: 100%;
+        height: 65vh;
+        
     `
+
+    
+
   return (
     <>
         <section className='about'>
-             <AboutSection>
-                <MemberList members = {members}/>
-           </AboutSection> 
-           
+            <AboutSection>
+              <CoverFlow style = {{backgroundColor : "purple"}}/>
+            </AboutSection>
         </section>
     
     </>
