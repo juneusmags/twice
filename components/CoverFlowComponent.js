@@ -1,5 +1,5 @@
 import React from 'react'
-import Coverflow from 'react-coverflow';
+import Coverflow from 'react-coverflow'
 import Card from './Card';
 import data from '../data_bio';
 import { useState } from 'react';
@@ -21,15 +21,19 @@ const CoverFlowComponent = () => {
                 role="menuitem"
                 tabIndex="0"
               >
-                <Card member = {members}/>
+                
               </div>
                 {members.map((member)=>{
                     return (
-                        <Card name = {member.name}/>
+                        <Card member = {member}/>
                     )
                 })}
               
   </Coverflow>
+
+
+
+
   )
 }
 

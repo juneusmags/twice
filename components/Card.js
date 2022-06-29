@@ -3,7 +3,9 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import { useState } from 'react'
 
-const Card = ({name}) => {
+const Card = ({member}) => {
+  const {name, image} = member
+  
   
 const CardContainer = styled.div`
   background-color: pink;
@@ -15,6 +17,7 @@ const CardContainer = styled.div`
   
   return (
     <CardContainer>
+     <Image src = {image} width = {"500px"} height = {"700px"}/>
       <h1>{name}</h1>
     </CardContainer>
   )
